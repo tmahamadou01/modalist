@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>WpOrders</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ wpOrder.id }}</td>
+            </tr>
+            <tr>
+                <th>Numorder</th>
+                <td>{{ wpOrder.numOrder }}</td>
+            </tr>
+            <tr>
+                <th>Productsref</th>
+                <td>{{ wpOrder.productsRef }}</td>
+            </tr>
+            <tr>
+                <th>Buyername</th>
+                <td>{{ wpOrder.buyerName }}</td>
+            </tr>
+            <tr>
+                <th>Buyeremail</th>
+                <td>{{ wpOrder.buyerEmail }}</td>
+            </tr>
+            <tr>
+                <th>Shippingaddress</th>
+                <td>{{ wpOrder.shippingAddress }}</td>
+            </tr>
+            <tr>
+                <th>Shippingzipcode</th>
+                <td>{{ wpOrder.shippingZipcode }}</td>
+            </tr>
+            <tr>
+                <th>Shippingcity</th>
+                <td>{{ wpOrder.shippingCity }}</td>
+            </tr>
+            <tr>
+                <th>Orderdate</th>
+                <td>{% if wpOrder.orderDate %}{{ wpOrder.orderDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Orderstate</th>
+                <td>{{ wpOrder.orderState }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('wporders_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('wporders_edit', { 'id': wpOrder.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

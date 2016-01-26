@@ -1,0 +1,55 @@
+
+.odd{
+    background-color: white;
+    }
+
+.even{
+    background-color: #FAF0E6;
+    }
+
+.moi{
+    width: 200px;
+    align:center;
+    display: block;
+    margin : auto;
+    list-style: none;
+}
+
+#thetable td {
+    font-size: 15px;
+}
+
+.wrap {
+    padding:10px;
+}
+
+#thetable .btn {
+    margin: 5px auto;
+}
+
+#thetable .title {
+    font-weight: bold;
+}
+
+.nav-soiree {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    margin:5px auto;
+}
+
+.bienvenue{
+    background-color: #CED8F6;
+    height: 50px;
+}
+body{
+    background-color: #F0F9F7;
+    }
+a{
+    color:white;
+
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+}

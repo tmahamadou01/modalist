@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>WpOrders list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numorder</th>
+                <th>Productsref</th>
+                <th>Buyername</th>
+                <th>Buyeremail</th>
+                <th>Shippingaddress</th>
+                <th>Shippingzipcode</th>
+                <th>Shippingcity</th>
+                <th>Orderdate</th>
+                <th>Orderstate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for wpOrder in wpOrders %}
+            <tr>
+                <td><a href="{{ path('wporders_show', { 'id': wpOrder.id }) }}">{{ wpOrder.id }}</a></td>
+                <td>{{ wpOrder.numOrder }}</td>
+                <td>{{ wpOrder.productsRef }}</td>
+                <td>{{ wpOrder.buyerName }}</td>
+                <td>{{ wpOrder.buyerEmail }}</td>
+                <td>{{ wpOrder.shippingAddress }}</td>
+                <td>{{ wpOrder.shippingZipcode }}</td>
+                <td>{{ wpOrder.shippingCity }}</td>
+                <td>{% if wpOrder.orderDate %}{{ wpOrder.orderDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ wpOrder.orderState }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('wporders_show', { 'id': wpOrder.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('wporders_edit', { 'id': wpOrder.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('wporders_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

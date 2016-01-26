@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1>WpOrders creation</h1>
+
+
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-5">
+            {{ form_widget(form.numOrder) }}
+            {{ form_widget(form.productsRef) }}
+        </div>
+        <div class="col-md-7">
+            {{ form_widget(form.buyerName) }}<br>
+            {{ form_widget(form.buyerEmail) }}<br>
+            {{ form_widget(form.shippingAddress) }}<br>
+            {{ form_widget(form.shippingZipcode) }}<br>
+            {{ form_widget(form.shippingCity) }}
+        </div>
+        <div class="col-md-12">
+            <input type="submit" value="Create" />
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('wporders_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,7 @@
+modalist_wporders:
+    resource: "@ModalistBundle/Resources/config/routing/wporders.yml"
+    prefix:   /wporders
+
+modalist_homepage:
+    path:     /
+    defaults: { _controller: ModalistBundle:Default:index }

@@ -1,0 +1,55 @@
+ModalistBundle\Entity\WpOrders:
+    type: entity
+    table: wp_orders
+    id:
+        id:
+            id: true
+            type: integer
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        numOrder:
+            type: integer
+            nullable: false
+            column: num_order
+        productsRef:
+            type: string
+            length: 100
+            nullable: false
+            column: products_ref
+        buyerName:
+            type: string
+            length: 100
+            nullable: false
+            column: buyer_name
+        buyerEmail:
+            type: string
+            length: 100
+            nullable: false
+            column: buyer_email
+        shippingAddress:
+            type: string
+            length: 100
+            nullable: false
+            column: shipping_address
+        shippingZipcode:
+            type: string
+            length: 100
+            nullable: false
+            column: shipping_zipcode
+        shippingCity:
+            type: string
+            length: 100
+            nullable: false
+            column: shipping_city
+        orderDate:
+            type: datetime
+            nullable: false
+            column: order_date
+        orderState:
+            type: string
+            length: 100
+            nullable: false
+            column: order_state
+    lifecycleCallbacks: {  }

@@ -1,0 +1,24 @@
+wporders_index:
+    path:     /
+    defaults: { _controller: "ModalistBundle:WpOrders:index" }
+    methods:  GET
+
+wporders_show:
+    path:     /{id}/show
+    defaults: { _controller: "ModalistBundle:WpOrders:show" }
+    methods:  GET
+
+wporders_new:
+    path:     /new
+    defaults: { _controller: "ModalistBundle:WpOrders:new" }
+    methods:  [GET, POST]
+
+wporders_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ModalistBundle:WpOrders:edit" }
+    methods:  [GET, POST]
+
+wporders_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ModalistBundle:WpOrders:delete" }
+    methods:  DELETE

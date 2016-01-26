@@ -1,0 +1,46 @@
+ModalistBundle\Entity\WpProducts:
+    type: entity
+    table: wp_products
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        productRef:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            column: product_ref
+        type:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+        marque:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+        stock:
+            type: integer
+            nullable: false
+            unsigned: false
+        urlPhoto1:
+            type: string
+            nullable: false
+            length: 1000
+            fixed: false
+            column: url_photo1
+        urlPhoto2:
+            type: string
+            nullable: false
+            length: 1000
+            fixed: false
+            column: url_photo2
+    lifecycleCallbacks: {  }
