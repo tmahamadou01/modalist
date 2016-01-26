@@ -1,31 +1,45 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-    <h1>WpOrders creation</h1>
-
 
     {{ form_start(form) }}
-    <div class="row">
-        <div class="col-md-5">
-            {{ form_widget(form.numOrder) }}
-            {{ form_widget(form.productsRef) }}
-        </div>
-        <div class="col-md-7">
-            {{ form_widget(form.buyerName) }}<br>
-            {{ form_widget(form.buyerEmail) }}<br>
-            {{ form_widget(form.shippingAddress) }}<br>
-            {{ form_widget(form.shippingZipcode) }}<br>
-            {{ form_widget(form.shippingCity) }}
-        </div>
-        <div class="col-md-12">
-            <input type="submit" value="Create" />
+    <div class="container">
+        <div class="row fo">
+            <div class="col-md-5">
+                <div class="panel panel-warning">
+                    <div class="panel-heading" align="center">Liste des produits de la Commande</div>
+                    <div class="panel-body">
+                        {{ form_widget(form.numOrder) }}
+                        <p>Produit 1</p>{{ form_widget(form.productsRef) }}
+                        <p>
+                            <br><button class="btn">Ajouter un article pour cette commande</button>
+                            <br><br><button class="btn">Supprimer un article pour cette commande</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-warning">
+                    <div class="panel-heading" align="center">Adresse de Livraison</div>
+                    <div class="panel-body">
+                        <p>Nom et Prenom </p> {{ form_widget(form.buyerName) }}<br>
+                        <p>Email </p>         {{ form_widget(form.buyerEmail) }}<br>
+                        <p>Adresse </p>       {{ form_widget(form.shippingAddress) }}<br>
+                        <p>Code Postale </p>  {{ form_widget(form.shippingZipcode) }}<br>
+                        <p>Ville </p>        {{ form_widget(form.shippingCity) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 val" align="center">
+                <input type="submit" value="CREER LA COMMANDE" />
+            </div>
         </div>
     </div>
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('wporders_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    {#<ul>#}
+    {#<li>#}
+    {#<a href="{{ path('wporders_index') }}">Back to the list</a>#}
+    {#</li>#}
+    {#</ul>#}
 {% endblock %}

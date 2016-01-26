@@ -9,10 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class WpOrders
 {
-    public function __construct()
-    {
-        $this->orderDate = new \DateTime();
-    }
     /**
      * @var integer
      */

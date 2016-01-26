@@ -54,12 +54,12 @@ ModalistBundle\Entity\WpOrders:
             column: shipping_city
         orderDate:
             type: datetime
-            nullable: false
+            nullable: true
             default: '0000-00-00 00:00:00'
             column: order_date
         orderState:
             type: string
-            nullable: false
+            nullable: true
             length: 100
             fixed: false
             column: order_state
