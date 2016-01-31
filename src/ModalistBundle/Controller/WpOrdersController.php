@@ -46,7 +46,16 @@ class WpOrdersController extends Controller
             $em->persist($wpOrder);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('modalist_homepage'));
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                array(
+                    'alert' => 'success',
+                    'title' => 'Success!',
+                    'message' => 'Votre commande a été validée'
+                )
+            );
+
+            return $this->redirect($this->generateUrl('wporders_new'));
         }
 
         return $this->render('wporders/new.html.twig', array(
