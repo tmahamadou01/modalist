@@ -43,7 +43,7 @@
 
 {% block body %}
 
-    <h1><u>Liste des Commande a Préparer</u></h1><br>
+    <h1><u>Liste des Commandes a Préparer</u></h1><br>
 
     <body onload="alternate('thetable')">
     <table class="tablesaw table table-striped" data-tablesaw-sortable data-tablesaw-sortable-switch id='thetable'>
@@ -51,7 +51,7 @@
         <tr>
             <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">Numero Commande</th>
             <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="3">Article</th>
-            <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="3">Nom et adresse</th>
+            <th scope="col" dat{% for order in orders %}a-tablesaw-sortable-col data-tablesaw-priority="3">Nom et adresse</th>
             <th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-sortable-numeric data-tablesaw-priority="3">Date de la commande</th>
             <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">Etat de la commande</th>
             <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Commande prete ?</th>
@@ -67,7 +67,7 @@
                 <td class="date">{{ order.orderDate.date |date('Y-m-d H:i') }}</td>
                 <td>{{ order.orderState }}</td>
                 {% if order.orderState == 'done' %}
-                <td><button class="btn btn-default">Non</button></td>
+                <td><button class="btn btn-default">Terminé</button></td>
                 {% else %}
                 <td><button class="btn btn-default">Oui</button></td>
                 {% endif %}
@@ -77,6 +77,7 @@
 
         </tbody>
     </table>
+    <a href="{{ path('wporders_new') }}"><button class="btn btn-default">Nouveau</button></a>
 
     </body>
 

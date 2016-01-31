@@ -1,5 +1,16 @@
 {% extends '::base.html.twig' %}
 
+{% block javascripts %}
+    <script></script>
+
+<script src="{{ asset('bundles/modalist/js/jquery-2.1.4.min.js') }}"></script>
+<script>
+
+    window.onload = function () {
+        $("bit").after("<input type='button' value='Do Stuff'>");
+    }
+</script>
+{% endblock %}
 {% block body %}
 
     {{ form_start(form) }}
@@ -9,11 +20,12 @@
                 <div class="panel panel-warning">
                     <div class="panel-heading" align="center">Liste des produits de la Commande</div>
                     <div class="panel-body">
-                        {{ form_widget(form.numOrder) }}
+                        <p class="order">{{ form_widget(form.numOrder) }}</p>
                         <p>Produit 1</p>{{ form_widget(form.productsRef) }}
                         <p>
-                            <br><button class="btn">Ajouter un article pour cette commande</button>
-                            <br><br><button class="btn">Supprimer un article pour cette commande</button>
+                            <div id="bt" class="bit"><a href="">Ajouter un article pour cette commande</a></div>
+                        <br>
+                            <div id="bt" class="bit"><a href="">Supprimer un article pour cette commande</a></div>
                         </p>
                     </div>
                 </div>
@@ -37,9 +49,4 @@
     </div>
     {{ form_end(form) }}
 
-    {#<ul>#}
-    {#<li>#}
-    {#<a href="{{ path('wporders_index') }}">Back to the list</a>#}
-    {#</li>#}
-    {#</ul>#}
 {% endblock %}

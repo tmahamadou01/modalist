@@ -41,10 +41,12 @@ class WpOrdersController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $produits = $em->getRepository('ModalistBundle:WpProducts')->findAll();
+            $wpOrder->setOrderState('progress');
             $em->persist($wpOrder);
             $em->flush();
 
-            return $this->redirectToRoute('wporders_show', array('id' => $wporders->getId()));
+            return $this->redirect($this->generateUrl('modalist_homepage'));
         }
 
         return $this->render('wporders/new.html.twig', array(
